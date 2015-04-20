@@ -1,7 +1,7 @@
 # Encoding: UTF-8
 #
 # Cookbook Name:: twitter-app
-# Spec:: default
+# Library:: provider_mapping
 #
 # Copyright 2015 Jonathan Hartman
 #
@@ -18,13 +18,9 @@
 # limitations under the License.
 #
 
-require 'spec_helper'
+require 'chef/dsl'
+require 'chef/platform/provider_mapping'
 
-describe 'twitter-app::default' do
-  # Serverspec examples can be found at
-  # http://serverspec.org/resource_types.html
-  
-  it 'does something' do
-    skip 'Replace this with meaningful tests'
-  end
-end
+Chef::Platform.set(platform: :mac_os_x,
+                   resource: :twitter_app,
+                   provider: Chef::Provider::MacAppStoreApp)

@@ -1,74 +1,68 @@
 Twitter App Cookbook
 ====================
-[![Cookbook Version](http://img.shields.io/cookbook/v/twitter-app.svg)][cookbook]
-[![Build Status](http://img.shields.io/travis/RoboticCheese/twitter-app-chef.svg)][travis]
-[![Code Climate](http://img.shields.io/codeclimate/github/RoboticCheese/twitter-app-chef.svg)][codeclimate]
-[![Coverage Status](http://img.shields.io/coveralls/RoboticCheese/twitter-app-chef.svg)][coveralls]
+[![Cookbook Version](https://img.shields.io/cookbook/v/twitter-app.svg)][cookbook]
+[![Build Status](https://img.shields.io/travis/RoboticCheese/twitter-app-chef.svg)][travis]
+[![Code Climate](https://img.shields.io/codeclimate/github/RoboticCheese/twitter-app-chef.svg)][codeclimate]
+[![Coverage Status](https://img.shields.io/coveralls/RoboticCheese/twitter-app-chef.svg)][coveralls]
 
 [cookbook]: https://supermarket.chef.io/cookbooks/twitter-app
-[travis]: http://travis-ci.org/RoboticCheese/twitter-app-chef
+[travis]: https://travis-ci.org/RoboticCheese/twitter-app-chef
 [codeclimate]: https://codeclimate.com/github/RoboticCheese/twitter-app-chef
 [coveralls]: https://coveralls.io/r/RoboticCheese/twitter-app-chef
 
-TODO: Enter the cookbook description here.
+A Chef cookbook to install the official Twitter app.
 
 Requirements
 ============
 
-TODO: Describe cookbook dependencies.
+This cookbook offers a recipe-based and a resource-based install. Use of the
+resource requires that you open a `mac_app_store` resource prior in your Chef
+run.
 
 Usage
 =====
 
-TODO: Describe how to use the cookbook.
+Either add the default recipe to your run_list, or implement the resource in
+a recipe of your own.
 
 Recipes
 =======
 
 ***default***
 
-TODO: Describe each component recipe.
-
-Attributes
-==========
-
-***default***
-
-TODO: Describe any noteworthy attributes.
+Opens the Mac App Store and performs a simple install of the app.
 
 Resources
 =========
 
 ***twitter_app***
 
-TODO: Describe each included resource.
+Used to perform installation of the app.
 
 Syntax:
 
-    twitter_app 'my_resource' do
-        attribute1 'value1'
-        action :create
+    twitter_app 'default' do
+        action :install
     end
 
 Actions:
 
-| Action  | Description  |
-|---------|--------------|
-| action1 | Do something |
+| Action     | Description     |
+|------------|-----------------|
+| `:install` | Install the app |
 
 Attributes:
 
 | Attribute  | Default        | Description          |
 |------------|----------------|----------------------|
-| attribute1 | `'some_value'` | Do something         |
-| action     | `:create`      | Action(s) to perform |
+| action     | `:install`     | Action(s) to perform |
 
 Providers
 =========
 
-TODO: Describe each included provider
+***Chef::Provider::TwitterApp***
 
-***Chef::Provider::SomeProvider***
+Provider for handling installation of the app.
 
 Contributing
 ============

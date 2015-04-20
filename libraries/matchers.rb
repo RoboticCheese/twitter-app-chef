@@ -1,7 +1,7 @@
 # Encoding: UTF-8
 #
 # Cookbook Name:: twitter-app
-# Recipe:: default
+# Library:: matchers
 #
 # Copyright 2015 Jonathan Hartman
 #
@@ -18,8 +18,8 @@
 # limitations under the License.
 #
 
-include_recipe 'mac-app-store'
-
-twitter_app 'default' do
-  action :install
+if defined?(ChefSpec)
+  def install_twitter_app(name)
+    ChefSpec::Matchers::ResourceMatcher.new(:twitter_app, :install, name)
+  end
 end
