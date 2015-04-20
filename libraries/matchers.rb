@@ -19,6 +19,8 @@
 #
 
 if defined?(ChefSpec)
+  ChefSpec.define_matcher(:twitter_app)
+
   def install_twitter_app(name)
     ChefSpec::Matchers::ResourceMatcher.new(:twitter_app, :install, name)
   end
