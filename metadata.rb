@@ -1,6 +1,5 @@
 # Encoding: UTF-8
-#
-# rubocop:disable SingleSpaceBeforeFirstArg
+
 name             'twitter-app'
 maintainer       'Jonathan Hartman'
 maintainer_email 'j@p4nt5.com'
@@ -12,4 +11,3 @@ version          '0.1.1'
 depends          'mac-app-store', '~> 0.1'
 
 supports         'mac_os_x'
-# rubocop:enable SingleSpaceBeforeFirstArg

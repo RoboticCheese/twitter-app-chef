@@ -5,12 +5,12 @@ require_relative '../../libraries/resource_twitter_app'
 
 describe Chef::Resource::TwitterApp do
   let(:name) { 'default' }
-  let(:resource) { described_class.new(name, nil) }
+  let(:run_context) { ChefSpec::SoloRunner.new.converge.run_context }
+  let(:resource) { described_class.new(name, run_context) }
 
   describe '#initialize' do
     it 'sets the correct resource name' do
-      exp = :twitter_app
-      expect(resource.instance_variable_get(:@resource_name)).to eq(exp)
+      expect(resource.resource_name).to eq(:twitter_app)
     end
   end
 
