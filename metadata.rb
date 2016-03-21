@@ -8,6 +8,6 @@ description      'Installs/Configures the Twitter app'
 long_description 'Installs/Configures the Twitter app'
 version          '0.1.1'
 
-depends          'mac-app-store', '~> 0.1'
+depends          'mac-app-store', '~> 1.0'
 
 supports         'mac_os_x'
